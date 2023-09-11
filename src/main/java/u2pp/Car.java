@@ -3,7 +3,7 @@ package u2pp;
 /**
  * This class represents a car‘s gas intake and consumption
  * 
- * @author YOUR NAME HERE
+ * @author Chae Geon Lim
  */
  
 public class Car {
@@ -13,30 +13,35 @@ public class Car {
     private String model; //The model of the car
     
     /**
-     * YOUR COMMENT HERE
+     * I understand
      * 
      * @param anEfficiency - the efficiency of the Car
      * @param aMake - the make of the Car
      * @param aModel - the model of the Car
      */ 
     public Car(double anEfficiency, String aMake, String aModel) {
-       //YOUR CODE HERE 	
+       //assign the parameters for the group a variable	
+    	make = aMake;
+    	model = aModel;
+        mpg = anEfficiency;
     }
     
     /**
-     * YOUR COMMENT HERE
+     * @return amount, specified as param, plus the gas already in tank, gas should rise accordingly ... use double for param 
      * @param amount - the amount of gas to add to the tank
      */
     public void addGas (double amount) {
-        //YOUR CODE HERE
+        //amount is added to gas
+    	gas += amount;
     }
     
     /**
-     * YOUR COMMENT HERE
+     * mpg = the efficiency
      * @param distance - the distance that the car has driven
      */
     public void drive (double distance) {
-        //YOUR CODE HERE
+        //Gas should go down for the distance traveled based on efficiency
+    	gas -= (distance / mpg);
     }
     
     /**
@@ -44,7 +49,7 @@ public class Car {
      */
     public double getGasInTank() {
         //YOUR CODE HERE
-        return 0.0;
+        return gas;
     }
     
     /**
